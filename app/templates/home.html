@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Flask App Test Homepage</h1>
+<a href="/">Index</a>
+{% if data %}
+    {% if "customers" in data %}
+        <br>
+        <h3>Customers</h3>
+        {% for cust in data['customers'] %}
+            {{cust['id']}}: {{cust['name']}}<br>
+        {% endfor %}
+    {% endif %}
+    {% if "products" in data %}
+        <br>
+        <h3>Products</h3>
+        {% for prod in data['products'] %}
+            {{prod['id']}}: {{prod['name']}}<br>
+        {% endfor %}
+    {% endif %}
+{% endif %}
+{% endblock %}

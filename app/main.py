@@ -3,16 +3,16 @@ import os
 import config
 import jwt
 from dotenv import load_dotenv
-from flask import Flask, request
+from flask import Flask, render_template
 from flask_wtf.csrf import CSRFProtect
-from views import home
+from views import home_view
 
 app = Flask(__name__, static_folder = 'static')
 app.secret_key = config.APP_SECRET_KEY
 csrf = CSRFProtect(app)
 
 # Import View Blueprints
-app.register_blueprint(home.bp)
+app.register_blueprint(home_view.bp)
 
 
 config.init_app()
@@ -30,6 +30,9 @@ def init_req():
     """ Check application and user state before handling each request """
     pass
 
+@app.route("/")
+def home():
+    return render_template('index.html')
 
 # Run development web server with debugging
 if __name__ == "__main__":

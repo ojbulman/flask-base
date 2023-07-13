@@ -1,3 +1,6 @@
+# UNCOMMENT BELOW FOR LIVE PROJECTS
+# *.env 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -10,7 +13,6 @@ __pycache__/
 log/
 logs/
 *.log
-config/
 *.cfg
 mods/
 dev/
@@ -39,7 +41,6 @@ parts/
 sdist/
 var/
 wheels/
-config/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -102,7 +103,6 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -123,4 +123,3 @@ venv.bak/
 # mypy
 .mypy_cache/
 .scannerwork
-setup/config.env
